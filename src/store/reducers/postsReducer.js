@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { GET_POSTS } from "../types";
+import { GET_POSTS, DELETE_POST } from "../types";
 
 const initialState = {
   posts: [],
@@ -14,6 +14,12 @@ export default function (state = initialState, action) {
         posts: action.payload,
         loading: false
       };
+      case DELETE_POST:
+        return {
+          ...state,
+          posts: state.posts.filter(post => post.id !== action.payload),
+          loading: false
+        }
     default:
       return state;
   }

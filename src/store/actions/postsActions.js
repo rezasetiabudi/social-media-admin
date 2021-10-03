@@ -1,9 +1,10 @@
-import { GET_POSTS, POSTS_ERROR } from "../types";
+import { DELETE_POST, GET_POSTS, POSTS_ERROR } from "../types";
 import axios from "axios";
+import API_URL from "../../constants"
 
 export const getPosts = () => async (dispatch) => {
   try {
-    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
+    const res = await axios.get(API_URL+'/posts');
 
     dispatch({
       type: GET_POSTS,
@@ -16,3 +17,10 @@ export const getPosts = () => async (dispatch) => {
     });
   }
 };
+
+export const deletePost = (index) => (dispatch) => {
+    dispatch({
+       type: DELETE_POST,
+       payload: index
+    })
+ }

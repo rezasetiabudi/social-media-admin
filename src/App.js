@@ -7,7 +7,6 @@ import Posts from "./components/Posts";
 function App() {
   return (
     <div className="App">
-      <h1>Redux Tutorial</h1>
       <Posts />
     </div>
   );
