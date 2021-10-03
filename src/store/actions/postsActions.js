@@ -23,4 +23,4 @@ export const deletePost = (index) => (dispatch) => {
        type: DELETE_POST,
        payload: index
     })
- }
+}

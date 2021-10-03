@@ -1,4 +1,4 @@
-import { GET_USERS, USERS_ERROR } from "../types";
+import { DELETE_USER, GET_USERS, USERS_ERROR } from "../types";
 import axios from "axios";
 
 import API_URL from "../../constants";
@@ -18,3 +18,11 @@ export const getUsers = () => async (dispatch) => {
     });
   }
 };
+
+
+export const deleteUser = (index) => (dispatch) => {
+  dispatch({
+     type: DELETE_USER,
+     payload: index
+  })
+}

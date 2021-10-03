@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { GET_USERS } from "../types";
+import { GET_USERS, DELETE_USER } from "../types";
 
 const initialState = {
   users: [],
@@ -13,7 +13,13 @@ export default function (state = initialState, action) {
         ...state,
         users: action.payload,
         loading: false
-      };
+      }
+    case DELETE_USER:
+      return {
+        ...state,
+        users: state.users.filter(user => user.id !== action.payload),
+        loading: false
+      }
     default:
       return state;
   }
