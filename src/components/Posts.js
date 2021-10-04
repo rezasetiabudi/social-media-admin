@@ -55,6 +55,7 @@ class Posts extends Component {
               <Flex 
                 w={'full'}
                 p={6}
+                bg="salmon"
                 >
                 <Flex
                   minW={'min-content'}

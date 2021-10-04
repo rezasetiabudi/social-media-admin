@@ -1,13 +1,14 @@
 import React from "react";
 
 import "./App.css";
+import './styles/globals.css'
 
-import Posts from "./components/Posts";
+import Dashboard from "./pages/dashboard";
 
 function App() {
   return (
     <div className="App">
-      <Posts />
+      <Dashboard />
     </div>
   );
 }
