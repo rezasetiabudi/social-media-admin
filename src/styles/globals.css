@@ -24,7 +24,7 @@ margin-bottom: 1.5em;
 }
 
 .sidebar-items {
-color: gray;
+color: #c0ac83;
 font-size: large;
 }
 
@@ -33,17 +33,17 @@ margin-left: 1em;
 }
 
 .sidebar-items:hover svg {
-color: #B57295;
+color: goldenrod;
 }
 
 .sidebar-items:hover p {
-color: #fff;
+color: goldenrods;
 }
 
 .active {
-color: #fff;
+color: gold;
 }
 
 .active-icon {
-color: #B57295 !important;
+color: gold !important;
 }

@@ -1,19 +1,22 @@
 import React from 'react'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 import {
     Flex,
     Heading,
     Text,
     Icon,
-    Link,
+    Link as CLink,
 } from '@chakra-ui/react'
 
 import {
     FiHome,
-    FiImage
+    FiImage,
+    FiMessageSquare
 } from "react-icons/fi"
 
-import Posts from "../components/Posts";
+import UserList from "../components/UserList";
+import PostList from "../components/PostList";
 
 
 export default function Dashboard() {
@@ -27,74 +30,94 @@ export default function Dashboard() {
                 bg="silver"
             >
 
-                {/* Sidebar route link */}
-                <Flex
-                    w={["100%", "100%", "15%", "20%", "20%"]}
-                    flexDir="column"
-                    alignItems="center"
-                    backgroundColor="#020202"
-                    color="#fff"
-                >
+                <BrowserRouter>
+                    {/* Sidebar route link */}
                     <Flex
+                        w={["100%", "100%", "15%", "20%", "20%"]}
                         flexDir="column"
-                        h={[null, null, "100vh"]}
-                        justifyContent="space-between"
+                        alignItems="center"
+                        backgroundColor="#242952"
+                        color="#fff"
                     >
                         <Flex
                             flexDir="column"
-                            as="nav"
+                            h={[null, null, "100vh"]}
+                            justifyContent="space-between"
                         >
-                            <Heading
-                                mt={50}
-                                mb={[25, 50, 100]}
-                                fontSize={["4xl", "4xl", "2xl", "3xl", "4xl",]}
-                                alignSelf="center"
-                                letterSpacing="tight"
-                            >
-                                Social Media Admin Dashboard
-                            </Heading>
                             <Flex
-                                flexDir={["row", "row", "column", "column", "column"]}
-                                align={["center", "center", "center", "flex-start", "flex-start"]}
-                                wrap={["wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
-                                justifyContent="center"
-                                px="25%"
+                                flexDir="column"
+                                as="nav"
                             >
-                                <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
-                                    <Link display={["none", "none", "flex", "flex", "flex"]}>
-                                        <Icon as={FiHome} fontSize="2xl" className="active-icon" />
-                                    </Link>
-                                    <Link _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
-                                        <Text className="active">Home</Text>
-                                    </Link>
-                                </Flex>
-                                <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
-                                    <Link display={["none", "none", "flex", "flex", "flex"]}>
-                                        <Icon as={FiImage} fontSize="2xl" /></Link>
-                                    <Link _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
-                                        <Text>Photos</Text>
-                                    </Link>
+                                <Heading
+                                    mt={50}
+                                    mb={[25, 50, 100]}
+                                    fontSize={["4xl", "4xl", "2xl", "3xl", "4xl",]}
+                                    alignSelf="center"
+                                    letterSpacing="tight"
+                                >
+                                    Social Media Admin Dashboard
+                                </Heading>
+                                <Flex
+                                    flexDir={["row", "row", "column", "column", "column"]}
+                                    align={["center", "center", "center", "flex-start", "flex-start"]}
+                                    wrap={["wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+                                    justifyContent="center"
+                                    px="25%"
+                                >
+                                        <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
+                                            <CLink display={["none", "none", "flex", "flex", "flex"]}>
+                                                <Icon as={FiHome} fontSize="2xl" />
+                                            </CLink>
+                                            <Link to='/'>
+                                                <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
+                                                    <Text>Home</Text>
+                                                </CLink>
+                                            </Link>
+                                        </Flex>
+                                        <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
+                                            <CLink display={["none", "none", "flex", "flex", "flex"]}>
+                                                <Icon as={FiMessageSquare} fontSize="2xl" />
+                                            </CLink>
+                                            <Link to='/postlist'>
+                                                <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
+                                                    <Text>Posts</Text>
+                                                </CLink>
+                                            </Link>
+                                        </Flex>
+                                        <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
+                                            <CLink display={["none", "none", "flex", "flex", "flex"]}>
+                                                <Icon as={FiImage} fontSize="2xl" />
+                                            </CLink>
+                                            <Link to='/photos'>
+                                                <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
+                                                    <Text>Photos</Text>
+                                                </CLink>    
+                                            </Link>
+                                        </Flex>
                                 </Flex>
                             </Flex>
                         </Flex>
                     </Flex>
-                </Flex>
-                
-                {/* Main Content render component from route*/}
-                <Flex
-                    w={["100%", "100%", "85%", "80%", "80%"]}
-                    p="3%"
-                    flexDir="column"
-                    overflow="auto"
-                    minH="100vh"
-                    >
+                    
+                    {/* Main Content render component from route*/}
                     <Flex
-                        w="full"
-                        direction="column"
-                    >
-                        <Posts />
+                        w={["100%", "100%", "85%", "80%", "80%"]}
+                        p="3%"
+                        flexDir="column"
+                        overflow="auto"
+                        minH="100vh"
+                        >
+                        <Flex
+                            w="full"
+                            direction="column"
+                        >
+                            <Switch>
+                                <Route path="/" exact component={UserList} />
+                                <Route path="/postlist" exact component={PostList} />
+                            </Switch>
+                        </Flex>
                     </Flex>
-                </Flex>
+                </BrowserRouter>
             </Flex>
         </>
     )
