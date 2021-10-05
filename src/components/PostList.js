@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 import { getUsers, deleteUser } from "../store/actions/usersActions";
 import { getPosts, deletePost } from "../store/actions/postsActions";
@@ -16,6 +15,7 @@ const mapStateToProps = (state) => ({
 
 class PostList extends Component {
   componentDidMount() {
+		this.props.getUsers();
     this.props.getPosts();
   }
 

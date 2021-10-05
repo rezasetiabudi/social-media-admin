@@ -6,6 +6,7 @@ import {
     Heading,
     Text,
     Icon,
+    Divider,
     Link as CLink,
 } from '@chakra-ui/react'
 
@@ -29,7 +30,6 @@ export default function Dashboard() {
                 overflow="hidden"
                 bg="silver"
             >
-
                 <BrowserRouter>
                     {/* Sidebar route link */}
                     <Flex
@@ -64,36 +64,40 @@ export default function Dashboard() {
                                     justifyContent="center"
                                     px="25%"
                                 >
+                                    
+                                    <Link to='/' mb>
                                         <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
                                                 <Icon as={FiHome} fontSize="2xl" />
                                             </CLink>
-                                            <Link to='/'>
                                                 <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
                                                     <Text>Home</Text>
                                                 </CLink>
-                                            </Link>
                                         </Flex>
+                                    </Link>
+
+                                    <Link to='/postlist'>
                                         <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
                                                 <Icon as={FiMessageSquare} fontSize="2xl" />
                                             </CLink>
-                                            <Link to='/postlist'>
                                                 <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
                                                     <Text>Posts</Text>
                                                 </CLink>
-                                            </Link>
                                         </Flex>
+                                    </Link>
+
+                                    <Link to='/albums'>
                                         <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
                                                 <Icon as={FiImage} fontSize="2xl" />
                                             </CLink>
-                                            <Link to='/Albums'>
                                                 <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
                                                     <Text>Albums</Text>
                                                 </CLink>    
-                                            </Link>
                                         </Flex>
+                                    </Link>
+
                                 </Flex>
                             </Flex>
                         </Flex>

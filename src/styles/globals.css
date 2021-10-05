@@ -30,20 +30,21 @@ font-size: large;
 
 .sidebar-items p {
 margin-left: 1em;
+margin-bottom: 1em;
 }
 
 .sidebar-items:hover svg {
-color: goldenrod;
-}
-
-.sidebar-items:hover p {
-color: goldenrods;
-}
-
-.active {
 color: gold;
 }
 
+.sidebar-items:hover p {
+color: gold;
+}
+
+.active {
+color: goldenrod;
+}
+
 .active-icon {
-color: gold !important;
+color: goldenrod !important;
 }
