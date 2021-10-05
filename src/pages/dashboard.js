@@ -6,7 +6,6 @@ import {
     Heading,
     Text,
     Icon,
-    Divider,
     Link as CLink,
 } from '@chakra-ui/react'
 
@@ -64,7 +63,7 @@ export default function Dashboard() {
                                     justifyContent="center"
                                     px="25%"
                                 >
-                                    
+
                                     <Link to='/' mb>
                                         <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
