@@ -88,9 +88,9 @@ export default function Dashboard() {
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
                                                 <Icon as={FiImage} fontSize="2xl" />
                                             </CLink>
-                                            <Link to='/photos'>
+                                            <Link to='/Albums'>
                                                 <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
-                                                    <Text>Photos</Text>
+                                                    <Text>Albums</Text>
                                                 </CLink>    
                                             </Link>
                                         </Flex>

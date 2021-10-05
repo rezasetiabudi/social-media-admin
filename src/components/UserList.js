@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
-
 import { getUsers, deleteUser } from "../store/actions/usersActions";
 
 import { Button, Box, Flex } from "@chakra-ui/react";
