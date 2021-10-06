@@ -1,23 +1,19 @@
 import React, { Component } from 'react'
-import { reduxForm, field } from 'redux-form'
+import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Link } from 'react-router-dom'
 
 import { Formik, Field, Form } from "formik";
 
 import { getUsers, putUsers } from "../store/actions/usersActions";
 
-import UserList from './UserList';
-
 import {
 	FormControl,
 	FormLabel,
 	FormErrorMessage,
-	FormHelperText,
 	Input,
 	Button,
 	Flex,
-	Box
   } from "@chakra-ui/react"
 
   
@@ -57,7 +53,7 @@ class FormComponent extends Component {
 		const { users } = this.props.users;
 		
 		const selectedId = this.props.match.params.id
-		const selectedUser = users.find(u => u.id == selectedId )
+		const selectedUser = users.find(u => u.id === parseInt(selectedId))
 
 		return (
 			<BrowserRouter>
