@@ -67,7 +67,7 @@ export default function Dashboard() {
                                     px="25%"
                                 >
 
-                                    <Link to='/' mb>
+                                    <Link to='/'>
                                         <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]} onClick={()=>setActive("account")}>
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
                                                 <Icon as={FiHome} fontSize="2xl" className={isActive === "account"? "active-icon" : ""}/>
