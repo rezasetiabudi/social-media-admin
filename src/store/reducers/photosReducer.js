@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { GET_PHOTOS, DELETE_PHOTOS } from "../types";
+import { GET_PHOTOS, DELETE_PHOTO } from "../types";
 
 const initialState = {
   photos: [],
@@ -14,7 +14,7 @@ export default function (state = initialState, action) {
         photos: action.payload,
         loading: false
       };
-      case DELETE_PHOTOS:
+      case DELETE_PHOTO:
         return {
           ...state,
           photos: state.photos.filter(photo => photo.id !== action.payload),

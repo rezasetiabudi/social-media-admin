@@ -17,6 +17,7 @@ import {
 
 import UserList from "../components/UserList";
 import PostList from "../components/PostList";
+import AlbumList from '../components/AlbumList';
 
 
 export default function Dashboard() {
@@ -75,7 +76,7 @@ export default function Dashboard() {
                                         </Flex>
                                     </Link>
 
-                                    <Link to='/postlist'>
+                                    <Link to='/postlists'>
                                         <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
                                                 <Icon as={FiMessageSquare} fontSize="2xl" />
@@ -105,7 +106,7 @@ export default function Dashboard() {
                     {/* Main Content render component from route*/}
                     <Flex
                         w={["100%", "100%", "85%", "80%", "80%"]}
-                        p="3%"
+                        p="2%"
                         flexDir="column"
                         overflow="auto"
                         minH="100vh"
@@ -116,7 +117,8 @@ export default function Dashboard() {
                         >
                             <Switch>
                                 <Route path="/" exact component={UserList} />
-                                <Route path="/postlist" exact component={PostList} />
+                                <Route path="/postlists" exact component={PostList} />
+                                <Route path="/albums" exact component={AlbumList} />
                             </Switch>
                         </Flex>
                     </Flex>

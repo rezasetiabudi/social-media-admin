@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { GET_ALBUMS, DELETE_ALBUMS } from "../types";
+import { GET_ALBUMS, DELETE_ALBUM } from "../types";
 
 const initialState = {
   albums: [],
@@ -14,7 +14,7 @@ export default function (state = initialState, action) {
         albums: action.payload,
         loading: false
       };
-      case DELETE_ALBUMS:
+      case DELETE_ALBUM:
         return {
           ...state,
           albums: state.albums.filter(album => album.id !== action.payload),

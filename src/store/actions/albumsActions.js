@@ -1,4 +1,4 @@
-import { DELETE_ALBUMS, GET_ALBUMS, ALBUMS_ERROR } from "../types";
+import { DELETE_ALBUM, GET_ALBUMS, ALBUMS_ERROR } from "../types";
 import axios from "axios";
 import API_URL from "../../constants"
 
@@ -18,9 +18,9 @@ export const getAlbums = () => async (dispatch) => {
   }
 };
 
-export const deleteAlbums = (index) => (dispatch) => {
+export const deleteAlbum = (index) => (dispatch) => {
     dispatch({
-       type: DELETE_ALBUMS,
+       type: DELETE_ALBUM,
        payload: index
     })
 }
