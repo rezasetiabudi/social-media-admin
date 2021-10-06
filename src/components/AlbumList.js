@@ -53,7 +53,6 @@ class AlbumList extends Component {
 				<Flex
 					w="full"
 					h="35vh"
-					bg="gold"
 					mb="10"
 					flexDir="row"
 					overflowX="auto"
@@ -62,7 +61,7 @@ class AlbumList extends Component {
 					{users && users.map((u) => (
 						albums && albums.filter(a => a.userId === u.id).map((ua)=> (
 							<React.Fragment key={ua.id}>
-								<Flex flexDir="column" bg="grey" mr={2} onClick={()=>this.setState({selectedAlbums: ua.id})}>
+								<Flex flexDir="column" bg="lightgrey" mr={2} onClick={()=>this.setState({selectedAlbums: ua.id})}>
 									<Box w="150px" h="180px">
 										<SimpleGrid h="full" columns={2} spacing={1}>
 											{
@@ -92,9 +91,8 @@ class AlbumList extends Component {
 				<Heading size="md" pb="2vh" textAlign="start">Photos of Album "{albums.find(a => a.id === this.state.selectedAlbums) && albums.find(a => a.id === this.state.selectedAlbums).title}"</Heading>
 				<Flex
 					w="full"
-					h="40vh"
+					h="38vh"
 					overflowY="auto"
-					bg="salmon"
 				>
 					<Box w="full" h="full">
 						<SimpleGrid h="full" columns={5} spacingX={16} spacingY={2}>

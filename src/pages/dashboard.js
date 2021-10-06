@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 import {
@@ -19,8 +19,10 @@ import UserList from "../components/UserList";
 import PostList from "../components/PostList";
 import AlbumList from '../components/AlbumList';
 
-
 export default function Dashboard() {
+
+    const [isActive, setActive] = useState("account");
+    
     return (
         <>
             <Flex
@@ -66,34 +68,34 @@ export default function Dashboard() {
                                 >
 
                                     <Link to='/' mb>
-                                        <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
+                                        <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]} onClick={()=>setActive("account")}>
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
-                                                <Icon as={FiHome} fontSize="2xl" />
+                                                <Icon as={FiHome} fontSize="2xl" className={isActive === "account"? "active-icon" : ""}/>
                                             </CLink>
                                                 <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
-                                                    <Text>Home</Text>
+                                                    <Text className={isActive === "account"? "active" : ""} >Account</Text>
                                                 </CLink>
                                         </Flex>
                                     </Link>
 
                                     <Link to='/postlists'>
-                                        <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
+                                        <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]} onClick={()=>setActive("posts")}>
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
-                                                <Icon as={FiMessageSquare} fontSize="2xl" />
+                                                <Icon as={FiMessageSquare} fontSize="2xl" className={isActive === "posts"? "active-icon" : ""}/>
                                             </CLink>
                                                 <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
-                                                    <Text>Posts</Text>
+                                                    <Text className={isActive === "posts"? "active" : ""}>Posts</Text>
                                                 </CLink>
                                         </Flex>
                                     </Link>
 
                                     <Link to='/albums'>
-                                        <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]}>
+                                        <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]} onClick={()=>setActive("albums")}>
                                             <CLink display={["none", "none", "flex", "flex", "flex"]}>
-                                                <Icon as={FiImage} fontSize="2xl" />
+                                                <Icon as={FiImage} fontSize="2xl" className={isActive === "albums"? "active-icon" : ""}/>
                                             </CLink>
                                                 <CLink _hover={{ textDecor: 'none' }} display={["flex", "flex", "none", "flex", "flex"]}>
-                                                    <Text>Albums</Text>
+                                                    <Text className={isActive === "albums"? "active" : ""}>Albums</Text>
                                                 </CLink>    
                                         </Flex>
                                     </Link>

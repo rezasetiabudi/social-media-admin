@@ -30,7 +30,7 @@ class UserList extends Component {
         {users &&
           users.map((u) => (
             <React.Fragment key={u.id}>
-              <Flex w={"full"} p={1} bg="salmon">
+              <Flex w={"full"} p={1}>
                 <Flex
                   minW={"min-content"}
                   w="full"

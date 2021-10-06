@@ -32,7 +32,7 @@ class PostList extends Component {
 					users.map((u) => (
 						posts && posts.filter(p => p.userId === u.id).map((up) => (
 								<React.Fragment key={up.id}>
-									<Flex w={"full"} p={1} bg="salmon" flexDir={"column"}>
+									<Flex w={"full"} p={1} flexDir={"column"}>
 										<Flex
 											minW={"min-content"}
 											w="full"
