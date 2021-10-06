@@ -13,8 +13,7 @@ export const DELETE_COMMENT = "DELETE_COMMENT";
 
 export const GET_ALBUMS = "GET_ALBUMS";
 export const ALBUMS_ERROR = "ALBUMS_ERROR";
-export const DELETE_ALBUM = "DELETE_ALBUM";
 
 export const GET_PHOTOS = "GET_PHOTOS";
 export const PHOTOS_ERROR = "PHOTOS_ERROR";
-export const DELETE_PHOTO = "DELETE_PHOTO";
+

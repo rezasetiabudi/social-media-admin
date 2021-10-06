@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { getUsers, deleteUser } from "../store/actions/usersActions";
+import { getUsers } from "../store/actions/usersActions";
 import { getPosts, deletePost } from "../store/actions/postsActions";
 import { getComments, deleteComment } from "../store/actions/commentsActions";
 
@@ -98,7 +98,6 @@ class PostList extends Component {
 
 export default connect(mapStateToProps, {
   getUsers,
-  deleteUser,
 	getPosts,
 	deletePost,
 	getComments,

@@ -1,4 +1,4 @@
-import { DELETE_PHOTO, GET_PHOTOS, PHOTOS_ERROR } from "../types";
+import { GET_PHOTOS, PHOTOS_ERROR } from "../types";
 import axios from "axios";
 import API_URL from "../../constants"
 
@@ -17,10 +17,3 @@ export const getPhotos = () => async (dispatch) => {
     });
   }
 };
-
-export const deletePhoto = (index) => (dispatch) => {
-    dispatch({
-       type: DELETE_PHOTO,
-       payload: index
-    })
-}
